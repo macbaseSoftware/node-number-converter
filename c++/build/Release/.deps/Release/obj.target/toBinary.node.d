@@ -1,0 +1,1 @@
+cmd_Release/obj.target/toBinary.node := g++ -o Release/obj.target/toBinary.node -shared -pthread -rdynamic -m64  -Wl,-soname=toBinary.node -Wl,--start-group Release/obj.target/toBinary/toBinary.o -Wl,--end-group 

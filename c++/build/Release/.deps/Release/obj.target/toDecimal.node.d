@@ -1,0 +1,1 @@
+cmd_Release/obj.target/toDecimal.node := g++ -o Release/obj.target/toDecimal.node -shared -pthread -rdynamic -m64  -Wl,-soname=toDecimal.node -Wl,--start-group Release/obj.target/toDecimal/toDecimal.o -Wl,--end-group 

@@ -1,0 +1,1 @@
+cmd_Release/toDecimal.node := ln -f "Release/obj.target/toDecimal.node" "Release/toDecimal.node" 2>/dev/null || (rm -rf "Release/toDecimal.node" && cp -af "Release/obj.target/toDecimal.node" "Release/toDecimal.node")

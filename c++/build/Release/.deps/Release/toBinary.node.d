@@ -1,0 +1,1 @@
+cmd_Release/toBinary.node := ln -f "Release/obj.target/toBinary.node" "Release/toBinary.node" 2>/dev/null || (rm -rf "Release/toBinary.node" && cp -af "Release/obj.target/toBinary.node" "Release/toBinary.node")
