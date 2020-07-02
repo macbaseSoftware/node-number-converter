@@ -46,6 +46,21 @@ namespace calculate{
 		return final;
 	}
 
+	//if convertFrom == Octal...
+	int octalToDecimal(std::string value){
+
+	}
+
+	//if convertFrom == Binary...
+	int binaryToDecimal(std::string value){
+
+	}
+
+	//if convertFrom == Hex...
+	int hexToDecimal(std::string value){
+
+	}
+
 	/*beginning of main function*/
 	void toDecimal(const FunctionCallbackInfo<Value>&args){
 		Isolate* isolate = args.GetIsolate();

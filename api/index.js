@@ -8,17 +8,42 @@ const toDecimal 	= require('../c++/build/Release/toDecimal'); //done with a warn
 const toOct 		= require('../c++/build/Release/toOct'); // done with bugs
 
 
+/*all other functions work with one input... getDecimal has to first check what type number it is.*/
 
-
-router.get('/api/getBinary', (req, res) => {
+router.get('/api/getDecimal', (req, res) => {
  	var result =0;
-
- 	
-	var id =req.query.id;
-	result = toBinary.RUN( parseInt(id) );
+	var value =req.query.value;
+	var convertTo = req.query.to;
+	// result = toBinary.RUN( parseInt(value) ); // make this accept 2 params
 
   res.json(result);
 });
+
+router.get('/api/getBinary', (req, res) => {
+ 	var result =0;
+	var value =req.query.value;
+	result = toBinary.RUN( parseInt(value) );
+
+  res.json(result);
+});
+
+router.get('/api/getOctal', (req, res) => {
+ 	var result =0;
+	var value =req.query.value;
+	result = toBinary.RUN( parseInt(value) );
+
+  res.json(result);
+});
+
+router.get('/api/getHex', (req, res) => {
+ 	var result =0;
+	var value =req.query.value;
+	result = toBinary.RUN( parseInt(value) );
+
+  res.json(result);
+});
+
+
 
 // router.get('/dashboard', (req, res)=>{
 // 	res.render('dashboard');
