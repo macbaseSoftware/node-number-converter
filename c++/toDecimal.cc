@@ -71,6 +71,7 @@ namespace calculate{
 		int digit ;
 		int sum =0;
 		int final = 0;
+		std::string convertFrom;
 		//string ss;
 
 
@@ -82,15 +83,16 @@ namespace calculate{
 			);
 			return;
 		}
-		if(!args[0]->IsNumber()){
+		if(!args[0]->IsObject() ){ /*in future might want to add.. check if second param is string*/
 			// throw an error:
 			isolate->ThrowException(Exception::TypeError(
-				String::NewFromUtf8(isolate, "Wrong argument types", NewStringType::kNormal).ToLocalChecked())
+				String::NewFromUtf8(isolate, "Wrong argument types, this function only accepts objects", NewStringType::kNormal).ToLocalChecked())
 			);
 			return;
 		}
 		number = args[0].As<Integer>()->Value();
 		number = (int)number;
+		convertFrom = args[1].As<>
 
 		// convert a number into a string so that we can loop through it.
 		std::stringstream ss;

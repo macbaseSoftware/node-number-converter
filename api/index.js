@@ -14,7 +14,12 @@ router.get('/api/getDecimal', (req, res) => {
  	var result =0;
 	var value =req.query.value;
 	var convertTo = req.query.to;
-	// result = toBinary.RUN( parseInt(value) ); // make this accept 2 params
+	var myObject = {
+		"value" : value,
+		"convertTo" : convertTo
+	}
+	/*im gonna pass in an object as the second parameter */
+	result = toBinary.RUN( myObject ); // make this accept 2 params
 
   res.json(result);
 });
