@@ -8,6 +8,19 @@ const Calculations = () => {
     const [dropdown2, setDropdown2] = useState(""); // dropdown
     const [data, setData] = useState(""); // data is the output going to be displayed
 
+
+    /*hooks must be standalone here: */
+    // useEffect(
+    //     const toBinary = (value) => {
+    //         fetch(`/api/getBinary?value=${value}`)
+    //         .then((res) => res.json())
+    //         // .then(customers => setData(customers, () => console.log('Customers fetched...', customers)));
+    //         .then((data) => setData(data)); 
+    // }, []);
+
+
+
+
     const handleDropdown1 = (event) => {
         setDropdown1(event.target.value);
     };
@@ -21,45 +34,54 @@ const Calculations = () => {
     }
 
     const compute = ()=>{
+
+        // same to same must be left the same
+
+        if(dropdown1 == dropdown2){
+            setData(textdata);
+        }
+
+
         /*here we call the below functions, with the value and the -to */
         let value = "";
+        let dummyValue = 455858;
         switch(dropdown2){
             case "binary":
-                value = toDecimal(textdata);
-                toBinary(value);
+                //value = toDecimal(textdata);
+                //toBinary(value);
+
+                toBinary(dummyValue);
             case "octal":
-                value = toDecimal(textdata);
-                toOctal(value);
+                //value = toDecimal(textdata);
+                //toOctal(value);
+
+                toOctal(dummyValue);
             case "hex":
-                value = toDecimal(textdata);
-                toHex(value);
-            case "decimal":
-                toDecimal(value, dropdown1);
+                //value = toDecimal(textdata);
+                //toHex(value);
+
+                toBinary(dummyValue);
+            // case "decimal":
+            //     toDecimal(value, dropdown1);
         }
     }
 
     /*-------------------*/
 
-    const toDecimal = (value, convertTo) => {
+    /*const toDecimal = (value, convertTo) => {
         useEffect((value, convertTo) => {
             fetch(`/api/getDecimal?value=${value}&to=${convertTo}`)
                 .then((res) => res.json())
                 // .then(customers => setData(customers, () => console.log('Customers fetched...', customers)));
                 .then((data) => setData(data));
         }, []);
-    };
+    };*/
 
-    const toBinary = (value) => {
-        useEffect((value) => {
-            fetch(`/api/getBinary?value=${value}`)
-                .then((res) => res.json())
-                // .then(customers => setData(customers, () => console.log('Customers fetched...', customers)));
-                .then((data) => setData(data));
-        }, []);
-    };
+    
+
 
     const toOctal = (value) => {
-        useEffect((value) => {
+        useEffect(() => {
             fetch(`/api/getOctal?value=${value}`)
                 .then((res) => res.json())
                 // .then(customers => setData(customers, () => console.log('Customers fetched...', customers)));
@@ -68,7 +90,7 @@ const Calculations = () => {
     };
 
     const toHex = (value) => {
-        useEffect((value) => {
+        useEffect(() => {
             fetch(`/api/getHex?value=${value}`)
                 .then((res) => res.json())
                 // .then(customers => setData(customers, () => console.log('Customers fetched...', customers)));
