@@ -7,19 +7,11 @@ const Calculations = () => {
     const [dropdown1, setDropdown1] = useState(""); // dropdown
     const [dropdown2, setDropdown2] = useState(""); // dropdown
     const [data, setData] = useState(""); // data is the output going to be displayed
+    const [computed, setComputed] = useState(0);
 
-
-    /*hooks must be standalone here: */
-    // useEffect(
-    //     const toBinary = (value) => {
-    //         fetch(`/api/getBinary?value=${value}`)
-    //         .then((res) => res.json())
-    //         // .then(customers => setData(customers, () => console.log('Customers fetched...', customers)));
-    //         .then((data) => setData(data)); 
-    // }, []);
-
-
-
+    useEffect( ()=> {
+        toBinary(parseInt(textdata));
+    }, [computed] );
 
     const handleDropdown1 = (event) => {
         setDropdown1(event.target.value);
@@ -34,33 +26,27 @@ const Calculations = () => {
     }
 
     const compute = ()=>{
-
-        // same to same must be left the same
-
         if(dropdown1 == dropdown2){
             setData(textdata);
         }
 
-
-        /*here we call the below functions, with the value and the -to */
-        let value = "";
-        let dummyValue = 455858;
         switch(dropdown2){
             case "binary":
                 //value = toDecimal(textdata);
                 //toBinary(value);
+                
+                 toBinary(parseInt(textdata));
 
-                toBinary(dummyValue);
-            case "octal":
-                //value = toDecimal(textdata);
-                //toOctal(value);
+            // case "octal":
+            //     //value = toDecimal(textdata);
+            //     //toOctal(value);
 
-                toOctal(dummyValue);
-            case "hex":
-                //value = toDecimal(textdata);
-                //toHex(value);
+            //     toOctal(dummyValue);
+            // case "hex":
+            //     //value = toDecimal(textdata);
+            //     //toHex(value);
 
-                toBinary(dummyValue);
+            //     toHex(dummyValue);
             // case "decimal":
             //     toDecimal(value, dropdown1);
         }
@@ -68,35 +54,39 @@ const Calculations = () => {
 
     /*-------------------*/
 
-    /*const toDecimal = (value, convertTo) => {
-        useEffect((value, convertTo) => {
-            fetch(`/api/getDecimal?value=${value}&to=${convertTo}`)
-                .then((res) => res.json())
-                // .then(customers => setData(customers, () => console.log('Customers fetched...', customers)));
-                .then((data) => setData(data));
-        }, []);
-    };*/
+    const toBinary=(value)=>{
+        fetch(`/api/getBinary?value=${value}`)
+            .then((res) => res.json())
+            // .then( () => console.log("FUNCTION RAN"))
+            .then((data) => setData(data)); 
+    }
 
-    
+    // const toDecimal = (value, convertTo) =>{
+    //     fetch(`/api/getDecimal?value=${value}&to=${convertTo}`)
+    //             .then((res) => res.json())
+    //             // .then(customers => setData(customers, () => console.log('Customers fetched...', customers)));
+    //             .then((data) => setData(data));
+    // }
 
 
-    const toOctal = (value) => {
-        useEffect(() => {
-            fetch(`/api/getOctal?value=${value}`)
-                .then((res) => res.json())
-                // .then(customers => setData(customers, () => console.log('Customers fetched...', customers)));
-                .then((data) => setData(data));
-        }, []);
-    };
+   
+    // const toOctal = (value) => {
+       
+    //         fetch(`/api/getOctal?value=${value}`)
+    //             .then((res) => res.json())
+    //             // .then(customers => setData(customers, () => console.log('Customers fetched...', customers)));
+    //             .then((data) => setData(data));
+      
+    // };
 
-    const toHex = (value) => {
-        useEffect(() => {
-            fetch(`/api/getHex?value=${value}`)
-                .then((res) => res.json())
-                // .then(customers => setData(customers, () => console.log('Customers fetched...', customers)));
-                .then((data) => setData(data));
-        }, []);
-    };
+    // const toHex = (value) => {
+    //     // useEffect(() => {
+    //     //     fetch(`/api/getHex?value=${value}`)
+    //     //         .then((res) => res.json())
+    //     //         // .then(customers => setData(customers, () => console.log('Customers fetched...', customers)));
+    //     //         .then((data) => setData(data));
+    //     // }, []);
+    // };
 
     return (
         <div className="container">
