@@ -1,43 +1,7 @@
-# React Express Starter Pack
+### Number converter application
+This is a standard number converter application, the difference is that the conversions are written in the backend with c++ and the frontend is built in React.js
 
-> Create full stack apps with React and Express. Run your client and server with a single command. 
+How the backend and the frontend are connected is `(NodeJs addon using the V8)` and then calling the functions in Node.
 
-### Redux Version
-This version does not include Redux
-[Click Here For Redux Version](https://github.com/bradtraversy/react_redux_express_starter) 
+The application makes use of an Express.js server in the backend.
 
-## Quick Start
-
-``` bash
-# Install dependencies for server
-npm install
-
-# Install dependencies for client
-npm run client-install
-
-# Run the client & server with concurrently
-npm run dev
-
-# Run the Express server only
-npm run server
-
-# Run the React client only
-npm run client
-
-# Server runs on http://localhost:5000 and client on http://localhost:3000
-```
-
-## App Info
-
-### Author
-
-Brad Traversy
-[Traversy Media](http://www.traversymedia.com)
-
-### Version
-
-1.0.0
-
-### License
-
-This project is licensed under the MIT License
