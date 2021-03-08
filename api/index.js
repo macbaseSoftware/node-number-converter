@@ -23,6 +23,10 @@ router.get('/api/getOctal', (req, res) => {
   res.json(result);
 });
 
+router.get('/api/generatePdf', (req,res) =>{
+	res.json("yes");
+}) 
+
 // router.get('/api/getHex', (req, res) => {
 //  	var result =0;
 // 	var value =req.query.value;
