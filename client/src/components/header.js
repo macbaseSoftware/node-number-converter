@@ -4,11 +4,10 @@ const Header=()=>{
     
     return (
       <div>
-        <div class="container">
-          <h3>A program that lets you convert digits to any format. OCTAL, DEC, BIN... and vice versa.</h3>
-          <h5>Build with a c++ addon for speed performances.</h5>
-         </div> 
-      </div>
+          <h2>TEXT to binary Converter</h2>
+          <h4>Very fast</h4>
+        </div> 
+      
     );
   }
 
