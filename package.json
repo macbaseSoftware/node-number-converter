@@ -18,7 +18,7 @@
   "dependencies": {
     "concurrently": "^3.6.1",
     "eslint-plugin-react": "^7.20.1",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "react": "^16.13.1"
   }
 }
